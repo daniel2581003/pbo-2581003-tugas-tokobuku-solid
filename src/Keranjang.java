@@ -14,7 +14,7 @@ public class Keranjang {
     public int hitungTotal() {
         int total = 0;
         for (Buku b : isi) {
-            total += b.getHarga();
+            total += b.hitungHargaAkhir();
         }
         return total;
     }
