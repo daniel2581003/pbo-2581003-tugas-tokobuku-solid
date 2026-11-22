@@ -10,6 +10,8 @@ public class Voucher implements MetodeBayar {
     }
 
     public int totalBayar(int totalBelanja) {
-        return totalBelanja - nilai;
+        // Versi salah: return totalBelanja - nilai;
+        // Hasil keranjang kedua: Voucher Rp100.000    : Rp-36.000
+        return Math.max(0, totalBelanja - nilai);
     }
 }
