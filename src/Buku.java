@@ -12,4 +12,7 @@ public abstract class Buku {
     public String getJudul()   { return judul; }
     public String getPenulis() { return penulis; }
     public int getHarga()      { return harga; }
+
+    public abstract int hitungHargaAkhir();
+    public abstract String getKeterangan();
 }

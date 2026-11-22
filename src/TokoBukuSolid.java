@@ -1,13 +1,18 @@
 public class TokoBukuSolid {
     public static void main(String[] args) {
+        Buku b1 = new BukuCetak("Pemrograman Java", "John Doe", 120000, 750, 10000);
+        Buku b2 = new BukuCetak("Algoritma Dasar", "Jane Smith", 95000, 400, 5000);
+        Buku b3 = new BukuDigital("Belajar OOP", "Ani Wijaya", 80000, 12.5, 20);
+        Buku b4 = new BukuAudio("Kisah Programmer", "Budi Santoso", 60000, 240, 10);
+
         Keranjang k1 = new Keranjang();
-        k1.tambah(new BukuCetak("Belajar OOP", "Penulis A", 64000));
-        k1.tambah(new BukuDigital("Buku 2", "Penulis B", 90000));   // ganti sesuai Bab 11
-        k1.tambah(new BukuAudio("Buku 3", "Penulis C", 100000));    // ganti sesuai Bab 11
-        k1.tambah(new BukuCetak("Buku 4", "Penulis D", 94000));     // ganti sesuai Bab 11
+        k1.tambah(b1);
+        k1.tambah(b2);
+        k1.tambah(b3);
+        k1.tambah(b4);
 
         Keranjang k2 = new Keranjang();
-        k2.tambah(new BukuCetak("Belajar OOP", "Penulis A", 64000));
+        k2.tambah(b3);
 
         MetodeBayar[] pilihan = {
                 new Tunai(), new Transfer(), new EWallet(), new Voucher(100000)
@@ -15,10 +20,12 @@ public class TokoBukuSolid {
 
         StrukPrinter printer = new StrukPrinter();
 
-        printer.cetakKeranjang("Keranjang 1", k1);
+        printer.cetakKeranjang("KERANJANG PERTAMA", k1);
         printer.cetakPembayaran(k1.hitungTotal(), pilihan);
 
-        printer.cetakKeranjang("Keranjang 2", k2);
+        System.out.println();
+
+        printer.cetakKeranjang("KERANJANG KEDUA", k2);
         printer.cetakPembayaran(k2.hitungTotal(), pilihan);
     }
 }
